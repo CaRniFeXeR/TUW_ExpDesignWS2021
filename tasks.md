@@ -10,7 +10,9 @@ The following tasks need to be done to finish the exercise:
 - Identify the experimental setup
     - Identify the experimental setup using the papers as well as the provided code
         - What is the main concern of the work?
+            *Popularity bias in recommender systems*
         - What dataset has been used?
+            *The LFM-1B dataset for music retrieval and recommendation. In:Proceedings of the 2016 ACM on International Conference on Multimedia Retrieval*
         - How was the data sampled?
         - How was the data preprocessed?
         - Which experiments were performed? Give a reason why a given experiment was performed.
