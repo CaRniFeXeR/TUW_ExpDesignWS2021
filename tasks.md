@@ -1,6 +1,6 @@
 # Tasks for Assignment 2
 
-## 1 - Taskoverview
+## 1 - Task overview
 
 The following tasks need to be done to finish the exercise:
 

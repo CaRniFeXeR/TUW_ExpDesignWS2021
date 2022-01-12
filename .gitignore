@@ -230,3 +230,7 @@ modules.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all
 /[original_paper_code]-LFM1b-analyses-master/data/
+/[original_paper_code]-LFM1b-analyses-master/data/high_main_users.txt
+/[original_paper_code]-LFM1b-analyses-master/data/low_main_users.txt
+/[original_paper_code]-LFM1b-analyses-master/data/user_events.txt
+/[original_paper_code]-LFM1b-analyses-master/data/medium_main_users.txt
