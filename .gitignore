@@ -229,4 +229,4 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all
-/LFM1b-analyses-master/data/
+/[original_paper_code]-LFM1b-analyses-master/data/
