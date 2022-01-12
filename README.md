@@ -31,3 +31,7 @@ Possible problems
 The original paper was submitted on the 10th of December 2019 (https://arxiv.org/abs/1912.04696).
 All versions of the required libraries were chosen to correspond to the latest stable version at this date.
 As python 3.8.0 was the latest major python release by the time the paper was submitted (https://www.python.org/downloads/) this version was chosen
+
+### Presentation Slides
+
+[Google Slides](https://docs.google.com/presentation/d/1OoDYtCuPHv2w9zGM7FLIWpnne5Sou6Qoe69soc7uaVc/edit?usp=sharing)
