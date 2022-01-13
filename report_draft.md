@@ -28,4 +28,5 @@ We used the Jupyter Notebooks provided by the authors on GitHub to rerun their c
 With the jupyter notebooks, external dependencies and the preprocessed data of the author provided on [Zenodo](https://zenodo.org/record/3475975#.YeBSdVkxlPY) we were able to execute the authors code. These results were the same as stated by the authors in their paper.
 
 The first thing we noticed is that the sampling in the analyzed paper differs from the original paper. As described, above
-they order the users by mainstreamness 
+they order the users by mainstreamness and took the top 1k user for the High Mainstreamness Group (HighMS), the bottom 1k users for the Low Mainstreamness Group (LowMS) and the median1k users for the Medium Mainstreamness Group (MedMS).
+In contrast, in the original paper the 3 groups were sampled as the top 20%, bottom 20% of most popular items for HighMS and LowMS and all other items for the MedMS group.
