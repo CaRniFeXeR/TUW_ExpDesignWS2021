@@ -234,3 +234,9 @@ modules.xml
 /[original_paper_code]-LFM1b-analyses-master/data/user_events.txt
 /[original_paper_code]-LFM1b-analyses-master/data/medium_main_users.txt
 /data/
+LFM1b-analyses-master/data/user_events.txt
+LFM1b-analyses-master/data/high_main_users.txt
+LFM1b-analyses-master/data/low_main_users.txt
+LFM1b-analyses-master/data/medium_main_users.txt
+LFM1b-analyses-master/LFM_Fairness.ipynb
+preliminary-presentation-text.md
