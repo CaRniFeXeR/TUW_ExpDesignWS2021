@@ -1,15 +1,30 @@
 
 # ATTENTION: This is only a draft, the real report is on [Overleaf](https://de.overleaf.com/project/61e04c40bc88877b64d5e22d).
 
-## The Analyzed Paper
-- describe domain
-- describe sampling strategy
-- describe results (maybe include plot from original paper)
+## Overview
+
+The paper we have analyzed is a reproducibility study. The original paper it tries to reproduce is concerned with bias in recommender systems. More specifically it looks at recommender systems in the movie domain. The analyzed study tries to reproduce the study results in the domain of music recommendation.
+The bias analyzed is concerned with popularity which means that popular items get a lot more exposure than less popular items.
 
 ## The Original Paper
 - describe domain
 - describe sampling strategy
-- describe difference to analyzed paper
+- describe used recommenders
+
+They divided all users into three groups according to user's interest in popular movies.
+Their experiment results show that many recommender systems are biased towards recommending popular items even if a user is interested in non-popular items.
+
+## The Analyzed Paper
+
+The analyzed paper aims to reproduce the observed bias of the original paper in the domain of music recommendation.
+- describe domain
+- describe sampling strategy
+They used the LFM-1b dataset, a dataset containing the listing history for over 120k users of the LastFM music platform. The users were divided into three groups by selecting the 1k top, 1k bottom and 1k median users ordered by their preferences to listen mainstream music.
+
+However, the recommendation items in original paper are movies not actors or film markers or any other entity that is related to more than one item.
+It is therefore debatable if music tracks would not be the more adequate choice to translate the original paper into the music domain.
+- describe results (maybe include plot from original paper)
+
 
 ## Found Resources 
 - list and describe found / used resources
@@ -32,7 +47,7 @@ In contrast, in the original paper the 3 groups were sampled as the top 20%, bot
 
 We argue that this extreme sampling could influence the observed bias effect in the outcome for the low and high group and thus do not reflect the same procedure as presented in the original paper.
 Due to this reason, we proposed a different sampling strategy: 
-We split all users into 3 groups according the mainstreamness in the Last-FM dataset (the 20% top, 20% bottom and the rest of all users). We than randomly samples 1000 users from each group. With this sampling we re-executed the given data pipeline. The following figure compares the results of our sampling the sampling given in the paper.
+We split all 120k users of the LFM_1b dataset into 3 groups according the *mainstreaminess_global* (the 20% top, 20% bottom and the rest of all users). 1000 users were than randomly sampled from each group. With this sampling we re-executed the given data pipeline. The following figure compares the results of our adpated sampling and the sampling given in the paper:
 
 ## TODO add result plots
 
@@ -45,5 +60,7 @@ However, further investigations revealed that we were not working with the exact
 
 Also the metadata of the provided user group files described the value column as *mainstreaminess_value*. Only in the datafile itself the column was named *M_global_R_APC*, which intensified our suspicion that a transformed or different value than the Last-FM dataset mainstreamness has been used. We contacted the authors and learned that they indeed did not used the *mainstreaminess_global* from the LFM_1b dataset but instead used the *M_global_R_APC* definition as proposed by Bauer et. al in [Global and country-specific mainstreaminess measures: Definitions, analysis, and usage for improving personalized music recommendation systems](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217389).
 
-We therefore started to implement the *M_global_R_APC* value as defined in this paper.
-This metric defined mainstreaminess of a specific user's music history by Kendall's correlation of all artists ranked by the total play counts and the artists listened by the user & ranked by the users play counts. With the implementation of this metric we were able to calculate the exact same value for a given user as provided group datafiles of the analyzed paper, which in theory enabled us to execute our adapted sampling strategy. However, we were not able to come up with a appropriate vectorized version of the *M_global_R_APC*. Our implementation needed about 10s per user to calculate this metric, which infeasible for 120k users given our time and resource budget. We concluded that the authors either executed this calculation on a cluster or used a shortcut to compute this metric.
+### Reproducing calculation of *M_global_R_APC* 
+
+In order to execute our adapted sampling and to reproduce the metric calculation we started to implement the *M_global_R_APC* value as defined in this paper.
+This metric defined mainstreaminess of a specific user's music history by Kendall's correlation of all artists ranked by the total play counts and the artists listened by the user & ranked by the users play counts. With the implementation of this metric we were able to calculate the exact same value for a given user as provided group datafiles of the analyzed paper, which in theory enabled us to execute our adapted sampling strategy. However, we were not able to come up with a appropriate vectorized version of the *M_global_R_APC*. Our implementation needed about 10s per user to calculate this metric, which infeasible for 120k users given our time and resource budget. We concluded that the authors either executed this calculation on a cluster or used a shortcut to compute this metric vectorized.
