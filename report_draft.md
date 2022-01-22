@@ -19,26 +19,24 @@ To perform their experiments they used User KNN, Item KNN, SVD++, Biased Matrix 
 
 The analyzed paper aims to reproduce the observed bias of the original paper in the domain of music recommendation. They used the LFM-1b dataset, a dataset containing the listing history for over 120k users of the LastFM music platform. 
 The dataset contains user artist interactions which are used to predict the preference of a specific user for a specific artist.
-In contrast, the recommended items in the original paper are movies not actors or film markers or any other entity that is related to more than one item. It is therefore debatable if music tracks would not be the more adequate choice to translate the original paper into the music domain.
+In contrast, the recommended items in the original paper are movies not actors or film markers or any other entity that is related to more than one item. It is therefore debatable if music tracks as recommendation items would not be the more adequate choice to translate the original paper into the music domain.
 
 The users were divided into three groups by selecting the 1k top, 1k bottom and 1k median users ordered by their preferences to listen mainstream music.
-For their experiments they use the same algorithms as in the original paper but excluded ItemKNN and SVD++ to reduce computational effort. The default parameters of the [Surprise toolkit](http://surpriselib.com/) for all algorithms were used which stays in contrast to the original paper.
+For their experiments they use the same algorithms as in the original paper but excluded ItemKNN and SVD++ to reduce computational effort. The default parameters of the [Surprise toolkit](http://surpriselib.com/) for all algorithms were used which stays in contrast to the original paper. The results showed that users of the bottom mainstream music listeners group receive worse recommendations than users from the top mainstream music listeners group.
 
+## Our Reproduction Analysis
 
-- describe results (maybe include plot from original paper)
+The following section describes our steps taken to and findings found while reproducing the analyzed paper.
 
+###  Found Resources 
 
-## Found Resources 
-- list and describe found / used resources
+We found and used the following resources to reproduce the analyzed paper:
+- the [Github Repo](https://github.com/domkowald/LFM1b-analyses) of the analyzed paper's authors including notebooks to rerun their experiments
+- a [Zendo Entry](https://zenodo.org/record/3475975#.YewO8fgxlHU) for the used user groups and user artist interactions of the analyzed paper
+- the [LFM_1b dataset](http://www.cp.jku.at/datasets/LFM-1b) provided by the JKU Linz
+- a [referenced paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217389) defining different mainstreaminess scores
 
-## Steps Taken
-- used github code of authors
-- collected correct package versions
-- rerun provided code --> same results
-- loaded original (last fm ) dataset
-- reproduced authors sampling
-- rerun provided code with reproduced sampling --> not same results
-- defined percentile sampling and rerun provided code with reproduced sampling
+### Steps Taken
 
 We used the jupyter notebooks provided by the authors on GitHub to rerun their calculations. Since they only provided a list of used package without explicit package versions, we tried to reconstruct which versions were most likely used. The original paper was submitted on the 10th of December 2019. All versions of the required libraries were chosen to correspond to the latest stable version at this date. As python 3.8.0 was the latest major python release by the time the paper was submitted (https://www.python.org/downloads/) this version was chosen.
 
