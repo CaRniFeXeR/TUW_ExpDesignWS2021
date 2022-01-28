@@ -1,37 +1,5 @@
 # TUW_ExpDesignWS2021
 
-The Unfairness of Popularity Bias in Music Recommendation:A Reproducibility Study
-https://arxiv.org/pdf/1907.13286.pdf
-Topic: bias of recommender systems against unpopular items
-Reproducing https://arxiv.org/pdf/1907.13286.pdf but with music data instead of movie data
-e define the popularity of an artist as the ratio of users who
-ave listened to this artist
-	
-Possible problems
-- How did the extracted the 3000 users?
-    - 1000 with lowest mainstreaminess scores
-    - 1000 with meainstreminess scorue around the median
-    - 1000 with highest mainstreaminess scores
-    - Possible problems? --> listing history size
-        - -->  users with a smaller profile size tend to listen to more popular
-        Artists
-    - ideas
-        - warum nciht random gesamplet?
-        - default parameter der recommender?
-    - Presentation
-        - 4 minuten
-        - 5 slides
-        - Content
-            - Short explaination of the paper
-            - Explain WHAT we want to reproduce
-            - Explain WHY we reproduce something
+A reproducibility study which aimed to investigate findings regarding recommender system bias in the movie domain for songs has been chosen to be reproduced. The challenges of setting up a suitable environment for the reproduction of the obtained results was non-trivial due to unclear versioning and partly undocumented data pre-processing steps. The original analysis performed by the analyzed authors was verified further by using cross validation for significance testing and reconstructing the describe data sampling approach. The findings described in the analyzed publication were successfully validated and reproduced.
 
-### Notes regarding versions:
-
-The original paper was submitted on the 10th of December 2019 (https://arxiv.org/abs/1912.04696).
-All versions of the required libraries were chosen to correspond to the latest stable version at this date.
-As python 3.8.0 was the latest major python release by the time the paper was submitted (https://www.python.org/downloads/) this version was chosen
-
-### Presentation Slides
-
-[Google Slides](https://docs.google.com/presentation/d/1OoDYtCuPHv2w9zGM7FLIWpnne5Sou6Qoe69soc7uaVc/edit?usp=sharing)
+This project was performed as a part of a the lecture "Experiment Design for Data Science" at the Technical University of Vienna (TU Wien). The goal of this project is the investigate the reproducibility of a specific publication.
